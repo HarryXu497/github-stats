@@ -134,10 +134,10 @@ div.ellipsis {
 <span class="progress">
 <span style="
   background-color: #e34c26; 
-  width: 79.845%;
+  width: 79.835%;
 " class="progress-item"></span><span style="
   background-color: #3178c6; 
-  width: 6.396%;
+  width: 6.395%;
 " class="progress-item"></span><span style="
   background-color: #3572A5; 
   width: 5.526%;
@@ -149,7 +149,7 @@ div.ellipsis {
   width: 1.621%;
 " class="progress-item"></span><span style="
   background-color: #ff3e00; 
-  width: 0.905%;
+  width: 0.904%;
 " class="progress-item"></span><span style="
   background-color: #f34b7d; 
   width: 0.705%;
@@ -190,6 +190,9 @@ div.ellipsis {
   background-color: #555555; 
   width: 0.027%;
 " class="progress-item"></span><span style="
+  background-color: #00ADD8; 
+  width: 0.012%;
+" class="progress-item"></span><span style="
   background-color: #427819; 
   width: 0.010%;
 " class="progress-item"></span><span style="
@@ -224,7 +227,7 @@ div.ellipsis {
       d="M8 4a4 4 0 100 8 4 4 0 000-8z"
   ></path></svg>
   <span class="lang">HTML</span>
-  <span class="percent">79.84%</span>
+  <span class="percent">79.83%</span>
 </li>
 <li style="animation-delay: 300ms;">
   <svg 
@@ -518,6 +521,22 @@ div.ellipsis {
   <svg 
       xmlns="http://www.w3.org/2000/svg" 
       class="octicon"
+      style="fill: #00ADD8;" 
+      viewBox="0 0 16 16" 
+      version="1.1" 
+      width="16" 
+      height="16"
+  ><path 
+      fill-rule="evenodd" 
+      d="M8 4a4 4 0 100 8 4 4 0 000-8z"
+  ></path></svg>
+  <span class="lang">Go</span>
+  <span class="percent">0.01%</span>
+</li>
+<li style="animation-delay: 3150ms;">
+  <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      class="octicon"
       style="fill: #427819;" 
       viewBox="0 0 16 16" 
       version="1.1" 
@@ -530,7 +549,7 @@ div.ellipsis {
   <span class="lang">Makefile</span>
   <span class="percent">0.01%</span>
 </li>
-<li style="animation-delay: 3150ms;">
+<li style="animation-delay: 3300ms;">
   <svg 
       xmlns="http://www.w3.org/2000/svg" 
       class="octicon"
@@ -546,7 +565,7 @@ div.ellipsis {
   <span class="lang">Dockerfile</span>
   <span class="percent">0.01%</span>
 </li>
-<li style="animation-delay: 3300ms;">
+<li style="animation-delay: 3450ms;">
   <svg 
       xmlns="http://www.w3.org/2000/svg" 
       class="octicon"
@@ -562,7 +581,7 @@ div.ellipsis {
   <span class="lang">Jupyter Notebook</span>
   <span class="percent">0.01%</span>
 </li>
-<li style="animation-delay: 3450ms;">
+<li style="animation-delay: 3600ms;">
   <svg 
       xmlns="http://www.w3.org/2000/svg" 
       class="octicon"
@@ -578,7 +597,7 @@ div.ellipsis {
   <span class="lang">Batchfile</span>
   <span class="percent">0.00%</span>
 </li>
-<li style="animation-delay: 3600ms;">
+<li style="animation-delay: 3750ms;">
   <svg 
       xmlns="http://www.w3.org/2000/svg" 
       class="octicon"
