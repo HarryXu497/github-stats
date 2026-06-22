@@ -239,7 +239,7 @@ fn getReposByYear(
         "Getting {d} month{s} of data starting from {d}/{d}...",
         .{ months, if (months != 1) "s" else "", start_month + 1, year },
     );
-    var response = try context.client.graphql(
+    const contributions_response = try context.client.graphql(
         \\query ($from: DateTime, $to: DateTime) {
         \\  viewer {
         \\    contributionsCollection(from: $from, to: $to) {
@@ -288,11 +288,11 @@ fn getReposByYear(
             ),
         },
     );
-    errdefer context.client.allocator.free(response.body);
-    if (response.status != .ok) {
+    defer context.client.allocator.free(contributions_response.body);
+    if (contributions_response.status != .ok) {
         std.log.err(
             "Failed to get data from {d} ({?s})",
-            .{ year, response.status.phrase() },
+            .{ year, contributions_response.status.phrase() },
         );
         return error.RequestFailed;
     }
@@ -324,10 +324,9 @@ fn getReposByYear(
             },
         } } },
         context.arena.allocator(),
-        response.body,
+        contributions_response.body,
         .{ .ignore_unknown_fields = true, .allocate = .alloc_always },
     )).data.viewer.contributionsCollection;
-    context.client.allocator.free(response.body);
     std.log.info(
         "Parsed {d} total repositories from {d}",
         .{ stats.commitContributionsByRepository.len, year },
@@ -425,7 +424,7 @@ fn getReposByYear(
             "Getting views for {s}...",
             .{raw_repo.nameWithOwner},
         );
-        response = try context.client.rest(
+        const views_response = try context.client.rest(
             try std.mem.concat(
                 context.arena.allocator(),
                 u8,
@@ -436,18 +435,18 @@ fn getReposByYear(
                 },
             ),
         );
-        defer context.client.allocator.free(response.body);
-        if (response.status == .ok) {
+        defer context.client.allocator.free(views_response.body);
+        if (views_response.status == .ok) {
             repository.views = (try std.json.parseFromSliceLeaky(
                 struct { count: u32 },
                 context.arena.allocator(),
-                response.body,
+                views_response.body,
                 .{ .ignore_unknown_fields = true },
             )).count;
         } else {
             std.log.info(
                 "Failed to get views for {s} ({?s})",
-                .{ raw_repo.nameWithOwner, response.status.phrase() },
+                .{ raw_repo.nameWithOwner, views_response.status.phrase() },
             );
         }
 
